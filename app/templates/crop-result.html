@@ -1,0 +1,128 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+  .mt-0 {
+  margin-top: 50 !important;
+}
+.body{
+  background-color: black;
+}
+
+.img{
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.btn1{
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#btnID{
+  background-color: green;
+  border: none;
+  padding: 8px 12px 8px 12px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 5px 10px;
+}
+</style>
+
+<div class="body">
+<br><br><br><br><br><br><br><br>
+  <div class="row">
+      <div class="col-sm py-2 py-md-3">
+          <div class="card card-body" style="justify-content: center;">
+               <h1 class="text-center"><b>You should grow <i>{{ prediction }} </i>in your farm</b> </h1><br>
+               <div class="btn">
+                <div class="btn1">
+                    <button type="button" onclick="show()" id="btnID"><b>Show Image</b></button>                    
+                </div>
+               </div>
+               <div class="img">
+                 <img id="image" src=" {{ url_for('static', filename='images/white.png') }}" class="img-fluid"" / height="100px" width="200px">   
+               </div> <br>         
+               <script>
+                function show() {
+                  var predict="{{ prediction }}";
+                 if(predict == "kidneybeans"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/kidneybeans.png') }}" 
+                }else if ( predict=="rice"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/rice.png') }}"
+                }else if ( predict=="maize") {
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/maize.png') }}"
+                }else if(predict=="chickpea"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/chickpea.png') }}"
+                }else if(predict=="pegionpeas"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/pegionpeas.png') }}"
+                }else if(predict=="mothbeans"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/mothbeans.png') }}"
+                }else if(predict=="mungbean"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/mungbean.png') }}"
+                }else if(predict=="blackgram"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/blackgram.png') }}"
+                }else if(predict=="lentil"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/lentil.png') }}"
+                }else if(predict=="pomegranate"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/pgm.png') }}"
+                }else if(predict=="banana"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/banana.png') }}"
+                }else if(predict=="mango"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/mango.png') }}"
+                }else if(predict=="grapes"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/grapes.png') }}"
+                }else if(predict=="watermelon"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/watermelon.png') }}"
+                }else if(predict=="muskmelon"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/muskmelon.png') }}"
+                }else if(predict=="apple"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/apple.png') }}"
+                }else if(predict=="orange"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/orange.png') }}"
+                }else if(predict=="papaya"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/papaya.png') }}"
+                }else if(predict=="coconut"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/cocunut.png') }}"
+                }else if(predict=="cotton"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/cotton.png') }}"
+                }else if(predict=="jute"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/jute.png') }}"
+                }else if(predict=="coffee"){
+                  let image = document.getElementById("image");
+                  image.src ="{{ url_for('static', filename='images/coffee.png') }}"
+                }
+            
+        }
+               </script>
+          </div>
+      </div>
+  </div>
+  <br><br><br><br>
+</div>
+{% endblock %}
+</div>
